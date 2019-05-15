@@ -8,12 +8,11 @@ import android.widget.Toast
 
 class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        Log.i("TAG", "Received.")
 
         val phone = intent?.getStringExtra("phone")
         val message = intent?.getStringExtra("message")
 
-        val toastMessage = "$phone: $message"
+        val toastMessage = "Texting{$phone}: $message"
 
         Toast.makeText(context, toastMessage, Toast.LENGTH_SHORT).show()
     }
