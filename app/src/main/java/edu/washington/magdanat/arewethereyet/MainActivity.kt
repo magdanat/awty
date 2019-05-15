@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,7 +27,6 @@ class MainActivity : AppCompatActivity() {
         button = findViewById(R.id.button)
 
         val alarmSystem = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-//        var intent = Intent(this, AlarmReceiver::class.java)
 
         button.setOnClickListener {
             if (button.text == "Start") {
@@ -45,8 +43,6 @@ class MainActivity : AppCompatActivity() {
                         putExtra("phone", reformattedNumber)
                     }
 
-
-//                    Toast.makeText(this@MainActivity, "This is a test!", Toast.LENGTH_SHORT).show()
                     Log.i("Info", "Alert should start")
 
                     val newIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
